@@ -1,58 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MyWorkBridge – Coming Soon</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MyWorkBridge — Jobs & Talent</title>
+  <meta name="description" content="MyWorkBridge connects great talent with SMEs and startups. Be first to know when we launch." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    *{box-sizing:border-box}html,body{height:100%}
-    body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#f6f8fb;color:#0f172a;display:flex;align-items:center;justify-content:center}
-    .wrap{max-width:860px;padding:32px}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:600;font-size:20px;color:#0ea5e9}
-    .logo svg{flex:0 0 auto}
-    .hero{margin-top:24px}
-    h1{font-size:34px;line-height:1.15;margin:0 0 10px}
-    .lead{font-size:18px;margin:0 0 18px;color:#334155}
-    .btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;border:1px solid #0ea5e9}
-    .btn:hover{background:#0ea5e9;color:#fff}
-    .hint{font-size:12px;color:#64748b;margin-top:8px}
-    .bullets{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:18px;padding:0;list-style:none}
-    .bullets li{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:12px}
-    footer{margin-top:28px;font-size:13px;color:#64748b}
+    :root{
+      --bg:#0b0f1a;
+      --card:#101827;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --brand:#4f46e5;
+      --brand-2:#22c55e;
+      --ring:rgba(79,70,229,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 80% -20%, rgba(79,70,229,.25), transparent 60%),
+        radial-gradient(900px 500px at -10% 0%, rgba(34,197,94,.18), transparent 60%),
+        var(--bg);
+      line-height:1.55;
+    }
+    .container{max-width:960px;margin:0 auto;padding:32px}
+    header{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:44px;height:44px;border-radius:12px;
+      background:conic-gradient(from 200deg, var(--brand), var(--brand-2));
+      display:grid;place-items:center;box-shadow:0 10px 30px rgba(79,70,229,.35);
+    }
+    .logo svg{filter:drop-shadow(0 2px 8px rgba(34,197,94,.45))}
+    .brand{font-weight:700;letter-spacing:.3px}
+    .card{
+      margin-top:28px;border:1px solid #1f2a44;border-radius:16px;
+      background:linear-gradient(180deg, rgba(16,24,39,.65), rgba(16,24,39,.35));
+      backdrop-filter:blur(8px);
+      padding:26px 22px 22px;
+      box-shadow:0 10px 30px rgba(0,0,0,.35), 0 0 0 1px rgba(79,70,229,.12) inset;
+    }
+    h1{margin:0 0 10px 0;font-size:clamp(28px,4.2vw,40px);line-height:1.15}
+    .lead{color:var(--muted);margin:0 0 20px 0}
+    .cta{
+      display:flex;flex-wrap:wrap;gap:12px;margin:18px 0 12px
+    }
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      background:linear-gradient(135deg,var(--brand),#6d28d9);
+      color:#fff;text-decoration:none;font-weight:600;
+      padding:12px 18px;border-radius:12px;
+      box-shadow:0 8px 22px var(--ring);outline:none;border:0;
+      transition:transform .08s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 12px 28px var(--ring)}
+    .btn:active{transform:translateY(0)}
+    .btn.secondary{
+      background:#111827;border:1px solid #25324a;color:var(--text)
+    }
+    .hint{color:var(--muted);font-size:.92rem}
+    ul.bullets{margin:12px 0 0 0;padding:0 0 0 18px}
+    ul.bullets li{margin:6px 0}
+    footer{
+      margin-top:28px;padding-top:16px;border-top:1px dashed #24304a;
+      color:var(--muted);display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between
+    }
+    a.mail{color:#c7d2fe}
+    .tag{font-size:.78rem;padding:4px 8px;border:1px solid #223153;border-radius:999px;color:#a5b4fc}
+    @media (max-width:520px){.cta{flex-direction:column}}
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <header class="logo">
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 12h6m6 0h6M9 12c0-3.314 2.686-6 6-6h0M9 12c0 3.314 2.686 6 6 6h0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
-      <span>MyWorkBridge</span>
+  <div class="container">
+    <!-- top -->
+    <header>
+      <div class="logo" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M4 12h6l2-3 4 6h4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="brand">MyWorkBridge <span class="tag">beta</span></div>
     </header>
 
-    <section class="hero">
-      <h1>We’re building the bridge between <em>Talent</em> & <em>Opportunity</em>.</h1>
+    <!-- main card -->
+    <main class="card" role="main">
+      <h1>We’re building the bridge between <em>Talent</em> &amp; <em>Opportunity</em>.</h1>
       <p class="lead">Job platform launching soon. Be first to know when we go live.</p>
+
       <div class="cta">
-        <!-- غيّري هاد الرابط من بعد بـ Google Form / Mailchimp -->
-        <a class="btn" href="mailto:hello@myworkbridge.careers?subject=Notify%20me%20at%20launch" id="notifyLink">Get Launch Update</a>
-        <p class="hint">Tip: later, replace this with your Google Form / Mailchimp link.</p>
+        <!-- BUTTON → YOUR GOOGLE FORM -->
+        <a class="btn"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSeDmw6cQwMQ8vEuFLCzIlUeSbTP59HV6ezhU71p_9DT8WIgbQ/viewform?usp=header"
+           target="_blank" rel="noopener noreferrer" id="notifyLink">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14m7-7H5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Get Launch Update
+        </a>
+
+        <a class="btn secondary" href="mailto:hello@myworkbridge.careers" aria-label="Contact us">
+          Contact us
+        </a>
       </div>
+
+      <p class="hint">Tip: later, replace this with your Google Form / Mailchimp link.</p>
+
       <ul class="bullets">
-        <li>Post jobs for SMEs & startups</li>
-        <li>Curated candidates & fast applications</li>
+        <li>Post jobs for SMEs &amp; startups</li>
+        <li>Curated candidates &amp; fast applications</li>
         <li>Massachusetts-first, global-ready</li>
       </ul>
-    </section>
+    </main>
 
     <footer>
-      <p>© <span id="year"></span> MyWorkBridge. All rights reserved.</p>
-      <p><a href="mailto:hello@myworkbridge.careers">hello@myworkbridge.careers</a></p>
+      <span>© <span id="year"></span> MyWorkBridge. All rights reserved.</span>
+      <a class="mail" href="mailto:hello@myworkbridge.careers">hello@myworkbridge.careers</a>
     </footer>
-  </main>
+  </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
