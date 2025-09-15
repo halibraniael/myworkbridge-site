@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop • MyWorkBridge</title>
+
+  <!-- Icons / theme -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/logo.svg">
+  <meta name="theme-color" content="#0b1220">
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f172a;
+      --text:#e2e8f0;
+      --muted:#94a3b8;
+      --line:rgba(148,163,184,.22);
+      --brand:#22c55e;
+      --brand-2:#16a34a;
+      --btn:#10b981;
+      --btn-ring:#22d3ee;
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text); background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(34,197,94,.12), transparent 60%),
+        radial-gradient(1200px 600px at 110% 120%, rgba(34,197,94,.10), transparent 60%),
+        var(--bg);
+    }
+    a{color:#93c5fd; text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:1040px; margin:0 auto; padding:24px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.01));
+      border:1px solid var(--line); border-radius:16px; padding:10px 14px; margin-bottom:18px;
+    }
+    .brand{display:flex; align-items:center; gap:10px}
+    .brand img{width:36px; height:36px; border-radius:8px}
+    .brand b{font-weight:800; letter-spacing:.2px}
+
+    .nav-links{display:flex; gap:14px; align-items:center}
+    .nav-links a{color:var(--text); opacity:.9}
+    .nav-links a:hover{opacity:1}
+
+    .hero{
+      display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+      border:1px solid var(--line); border-radius:20px; padding:20px 18px; margin-bottom:18px;
+    }
+    .hero h1{margin:0 0 6px 0; font-size:22px}
+    .hero p{margin:0; color:var(--muted); font-size:14px}
+
+    .filters{display:flex; gap:8px; flex-wrap:wrap}
+    .chip{
+      border:1px solid var(--line); color:var(--text); background:#0f1a2a; border-radius:999px;
+      padding:8px 12px; font-size:13px; cursor:pointer; user-select:none;
+    }
+    .chip.active{border-color:rgba(34,197,94,.45); box-shadow:0 0 0 2px rgba(34,197,94,.15) inset}
+
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
+      border:1px solid var(--line); border-radius:16px; overflow:hidden;
+      display:flex; flex-direction:column;
+    }
+    .thumb{width:100%; aspect-ratio:4/3; background:#0f1a2a; display:block}
+    .body{padding:12px}
+    .title{font-weight:600; margin:0 0 4px 0}
+    .muted{color:var(--muted); font-size:13px; margin:0 0 8px 0}
+    .price{font-weight:700; margin:0 0 10px 0}
+
+    .row{display:flex; gap:8px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      background:var(--btn); color:#041016; border:none; border-radius:10px; padding:10px 12px;
+      font-weight:600; cursor:pointer; text-decoration:none;
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .btn.sec{
+      background:transparent; color:var(--text); border:1px solid var(--line)
+    }
+    .hint{margin-top:12px; color:var(--muted); font-size:12px}
+    footer{margin-top:26px; color:var(--muted); font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- NAV -->
+    <div class="nav">
+      <div class="brand">
+        <img src="/assets/logo.svg" alt="MW">
+        <b>MyWorkBridge</b>
+      </div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/shop/">Shop</a>
+        <a href="/waitlist.html">Waitlist</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div>
+        <h1>Shop</h1>
+        <p>Curated gear & tools we love. Launch offer coming soon.</p>
+      </div>
+      <div class="filters">
+        <div class="chip active">All</div>
+        <div class="chip">Coffee</div>
+        <div class="chip">Equipment</div>
+        <div class="chip">Accessories</div>
+      </div>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid">
+      <!-- Card 1 -->
+      <article class="card">
+        <img class="thumb" src="https://picsum.photos/seed/coffee1/600/450" alt="">
+        <div class="body">
+          <p class="title">Starter Beans (Single Origin)</p>
+          <p class="muted">Light roast • 250g</p>
+          <p class="price">$14.00</p>
+          <div class="row">
+            <a class="btn" href="/waitlist.html">Get Launch Deal</a>
+            <a class="btn sec" href="#">View</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <img class="thumb" src="https://picsum.photos/seed/grinder/600/450" alt="">
+        <div class="body">
+          <p class="title">Hand Grinder Pro</p>
+          <p class="muted">Stainless • 38mm Burrs</p>
+          <p class="price">$69.00</p>
+          <div class="row">
+            <a class="btn" href="/waitlist.html">Get Launch Deal</a>
+            <a class="btn sec" href="#">View</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <img class="thumb" src="https://picsum.photos/seed/kettle/600/450" alt="">
+        <div class="body">
+          <p class="title">Gooseneck Kettle</p>
+          <p class="muted">1.0L • Variable Temp</p>
+          <p class="price">$59.00</p>
+          <div class="row">
+            <a class="btn" href="/waitlist.html">Get Launch Deal</a>
+            <a class="btn sec" href="#">View</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <img class="thumb" src="https://picsum.photos/seed/scale/600/450" alt="">
+        <div class="body">
+          <p class="title">Brew Scale Mini</p>
+          <p class="muted">0.1g accuracy • Timer</p>
+          <p class="price">$24.00</p>
+          <div class="row">
+            <a class="btn" href="/waitlist.html">Get Launch Deal</a>
+            <a class="btn sec" href="#">View</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="card">
+        <img class="thumb" src="https://picsum.photos/seed/mug/600/450" alt="">
+        <div class="body">
+          <p class="title">Insulated Mug</p>
+          <p class="muted">350ml • Spill-proof</p>
+          <p class="price">$19.00</p>
+          <div class="row">
+            <a class="btn" href="/waitlist.html">Get Launch Deal</a>
+            <a class="btn sec" href="#">View</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="card">
+        <img class="thumb" src="https://picsum.photos/seed/dripper/600/450" alt="">
+        <div class="body">
+          <p class="title">Ceramic Dripper V02</p>
+          <p class="muted">2–4 cups • White</p>
+          <p class="price">$16.00</p>
+          <div class="row">
+            <a class="btn" href="/waitlist.html">Get Launch Deal</a>
+            <a class="btn sec" href="#">View</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="card">
+        <img class="thumb" src="https://picsum.photos/seed/filter/600/450" alt="">
+        <div class="body">
+          <p class="title">Paper Filters (100)</p>
+          <p class="muted">Bleached • V02</p>
+          <p class="price">$7.00</p>
+          <div class="row">
+            <a class="btn" href="/waitlist.html">Get Launch Deal</a>
+            <a class="btn sec" href="#">View</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="card">
+        <img class="thumb" src="https://picsum.photos/seed/tamper/600/450" alt="">
+        <div class="body">
+          <p class="title">Espresso Tamper</p>
+          <p class="muted">58mm • Walnut</p>
+          <p class="price">$22.00</p>
+          <div class="row">
+            <a class="btn" href="/waitlist.html">Get Launch Deal</a>
+            <a class="btn sec" href="#">View</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="hint">Tip: كل زر “Get Launch Deal” كيمشي للـ <a href="/waitlist.html">waitlist</a> باش تجمعي الإيميلات قبل البيع الحقيقي.</p>
+
+    <footer>© <span id="year"></span> MyWorkBridge. All rights reserved.</footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
