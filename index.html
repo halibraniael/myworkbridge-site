@@ -2,117 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>MyWorkBridge — Jobs & Talent</title>
-  <meta name="description" content="We’re building the bridge between talent and opportunity. Be first to know when we launch." />
-  <link rel="canonical" href="https://www.myworkbridge.careers/" />
-
-  <!-- Social preview (optional: add og.png at repo root and keep these) -->
-  <meta property="og:title" content="MyWorkBridge — Jobs & Talent" />
-  <meta property="og:description" content="Be first to know when we launch." />
-  <meta property="og:image" content="https://www.myworkbridge.careers/og.png" />
-  <meta property="og:url" content="https://www.myworkbridge.careers/" />
-  <meta name="twitter:card" content="summary_large_image" />
-
+  <title>MyWorkBridge — Talent ↔ Opportunity</title>
+  <meta name="description" content="Job platform launching soon. Be first to know when we go live.">
   <style>
     :root{
-      --bg:#0f172a;        /* slate-900 */
-      --card:#0b1220;      /* slightly lighter bg */
-      --text:#e2e8f0;      /* slate-200 */
-      --muted:#94a3b8;     /* slate-400 */
-      --brand:#22c55e;     /* green-500 */
-      --brand-2:#06b6d4;   /* cyan-500 */
-      --btn:#10b981;       /* emerald-500 */
-      --btn-hover:#059669; /* emerald-600 */
-      --ring:#22d3ee;      /* cyan-400 */
+      --bg:#0b1220; --card:#0f172a; --text:#e2e8f0;
+      --line:rgba(148,163,184,.22);
+      --brand:#22c55e; --brand-2:#06b6d4; --accent:#10b981; --accent-2:#059669;
+    }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial;
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(34,197,94,.15), transparent 60%),
-                  radial-gradient(1200px 600px at 110% 10%, rgba(6,182,212,.18), transparent 60%),
-                  var(--bg);
-      color:var(--text); display:flex; align-items:center; justify-content:center; padding:24px;
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:radial-gradient(1200px 600px at 10% 10%, rgba(34,197,94,.15), transparent 60%),
+                 radial-gradient(1200px 600px at 110% 10%, rgba(6,182,212,.18), transparent 60%);
+      background-color:var(--bg); color:var(--text);
+      display:flex; align-items:center; justify-content:center; padding:24px;
     }
+    .wrap{max-width:980px; width:100%}
     .card{
-      width:min(100%, 860px);
       background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
-      border:1px solid rgba(148,163,184,.25);
-      border-radius:20px; padding:32px 28px; position:relative;
-      box-shadow:0 20px 60px rgba(0,0,0,.45);
+      border:1px solid var(--line); border-radius:20px; position:relative;
+      box-shadow:0 20px 60px rgba(0,0,0,.45); padding:0 24px 28px;
     }
-    header{display:flex; align-items:center; gap:12px; margin-bottom:20px}
-    .logo{
-      width:44px; height:44px; border-radius:10px;
-      background: conic-gradient(from 210deg, var(--brand), var(--brand-2));
-      display:grid; place-items:center; color:#0b1220; font-weight:800;
-      border:1px solid rgba(148,163,184,.35);
+
+    /* NAV */
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 6px; border-bottom:1px solid var(--line);
     }
-    .mark{font-weight:700; letter-spacing:.2px}
-    .hero h1{
-      margin:8px 0 12px; line-height:1.15; font-size:clamp(28px, 5vw, 40px);
+    .brand{display:flex; gap:10px; align-items:center; font-weight:700}
+    .badge{
+      width:34px; height:34px; display:grid; place-items:center; color:#0b1220;
+      background:conic-gradient(from 210deg, var(--brand), var(--brand-2));
+      border-radius:10px; font-weight:800; box-shadow:0 10px 18px rgba(0,0,0,.35);
     }
-    .lead{color:var(--muted); margin:0 0 18px; font-size:15.5px}
-    .cta{display:flex; gap:12px; align-items:center; margin:20px 0 10px}
+    .nav a{color:#93c5fd; text-decoration:none}
+    .links{display:flex; gap:18px; align-items:center}
+    .links a:hover{color:#bfdbfe; text-decoration:underline}
+
+    /* HERO */
+    header{padding:18px 6px 0}
+    .logo{display:none} /* kept for compatibility */
+    .hero{padding:18px 6px}
+    h1{margin:0 0 12px; font-size:clamp(28px, 4.5vw, 44px); line-height:1.12}
+    .lead{color:#9aa7b7; margin:0 0 16px}
+    .cta{margin:20px 0 24px}
     .btn{
-      background:var(--btn); color:#00110a; text-decoration:none; font-weight:700;
-      padding:12px 18px; border-radius:12px; border:1px solid rgba(16,185,129,.6);
-      box-shadow:0 8px 20px rgba(16,185,129,.25);
-      transition:.2s transform, .2s background, .2s box-shadow;
-      display:inline-flex; align-items:center; gap:8px
+      display:inline-flex; gap:10px; align-items:center; justify-content:center;
+      padding:12px 16px; border-radius:12px; color:#0b1220; font-weight:700;
+      background:linear-gradient(180deg, #34d399, #22c55e);
+      box-shadow:0 12px 24px rgba(34,197,94,.28), inset 0 0 0 1px rgba(0,0,0,.08);
     }
-    .btn:hover{background:var(--btn-hover); transform:translateY(-1px); box-shadow:0 12px 26px rgba(16,185,129,.32)}
-    .hint{color:var(--muted); font-size:13px}
-    ul{margin:14px 0 0 18px; padding:0; color:#cbd5e1}
-    li{margin:6px 0}
-    footer{margin-top:20px; color:var(--muted); font-size:13.5px}
-    footer a{color:#9ae6b4; text-decoration:none}
-    footer a:hover{ text-decoration:underline }
+    .btn:hover{transform:translateY(-1px)}
+    .hint{color:#94a3b8; font-size:14px; margin-top:8px}
+
+    .bullets{margin:20px 0 6px; padding-left:18px}
+    .bullets li{margin:8px 0}
+
+    footer{margin-top:22px; color:#9aa7b7; font-size:13.5px}
+    footer a{color:#93c5fd; text-decoration:none}
+    footer a:hover{text-decoration:underline}
+
     /* focus ring */
-    a:focus-visible, button:focus-visible{outline:3px solid var(--ring); outline-offset:3px; border-radius:12px}
+    a:focus-visible, button:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:12px}
   </style>
 </head>
 <body>
-  <main class="card" role="main">
-    <header>
-      <div class="logo" aria-hidden="true">MW</div>
-      <div class="mark">MyWorkBridge</div>
-    </header>
+  <div class="wrap">
+    <div class="card">
 
-    <section class="hero" aria-labelledby="title">
-      <h1 id="title">We’re building the bridge between <em>Talent</em> &amp; <em>Opportunity</em>.</h1>
-      <p class="lead">Job platform launching soon. Be first to know when we go live.</p>
+      <!-- NAVBAR -->
+      <nav class="nav" aria-label="Primary">
+        <div class="brand">
+          <span class="badge">MW</span>
+          <span>MyWorkBridge</span>
+        </div>
+        <div class="links">
+          <a href="/">Home</a>
+          <a href="/waitlist.html">Join Waitlist</a>
+          <a href="mailto:hello@myworkbridge.careers">Contact</a>
+        </div>
+      </nav>
 
-      <div class="cta">
-        <!-- ✅ YOUR LIVE GOOGLE FORM LINK -->
-        <a class="btn"
-           href="https://docs.google.com/forms/d/e/1FAIpQLSeDmw6cQwMQ8vEuFLCzIlUeSbTP59HV6ezhU71p_9DT8WIgbQ/viewform?usp=header"
-           target="_blank" rel="noopener">
-          Get Launch Update
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M7 17L17 7M17 7H9M17 7v8" stroke="#022c22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <p class="hint">Tip: later, replace this with your Google Form / Mailchimp link.</p>
-      </div>
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="title">
+        <h1 id="title">We’re building the bridge between <em>Talent</em> &amp; <em>Opportunity</em>.</h1>
+        <p class="lead">Job platform launching soon. Be first to know when we go live.</p>
 
-      <ul aria-label="Highlights">
-        <li>Post jobs for SMEs & startups</li>
-        <li>Curated candidates & fast applications</li>
-        <li>Massachusetts–first, global–ready</li>
-      </ul>
-    </section>
+        <div class="cta">
+          <!-- CTA يدي للصفحة الجديدة ديال الانتظار -->
+          <a class="btn" href="/waitlist.html" rel="noopener">
+            Get Launch Update
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 17L17 7M17 7H8m9 0v9" stroke="#0b1220" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <p class="hint">Tip: You can always switch this to your Mailchimp or CRM link later.</p>
+        </div>
 
-    <footer>
-      <p>© <span id="y"></span> MyWorkBridge. All rights reserved.</p>
-      <p><a href="mailto:hello@myworkbridge.careers">hello@myworkbridge.careers</a></p>
-    </footer>
-  </main>
+        <ul class="bullets">
+          <li>Post jobs for SMEs &amp; startups</li>
+          <li>Curated candidates &amp; fast applications</li>
+          <li>Massachusetts–first, global–ready</li>
+        </ul>
+
+        <footer>
+          <p>© <span id="year"></span> MyWorkBridge. All rights reserved.</p>
+          <p><a href="mailto:hello@myworkbridge.careers">hello@myworkbridge.careers</a></p>
+        </footer>
+      </section>
+
+    </div>
+  </div>
 
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // year auto
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
