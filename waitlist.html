@@ -1,30 +1,75 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Join the MyWorkBridge Waitlist</title>
-<meta name="description" content="Sign up to get launch updates from MyWorkBridge.">
-<style>
-  :root{--bg:#0b1220;--card:#0f172a;--text:#e2e8f0;--line:rgba(148,163,184,.22)}
-  *{box-sizing:border-box} html,body{height:100%}
-  body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-  .wrap{max-width:980px;margin:0 auto;padding:20px}
-  .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
-        border:1px solid var(--line);border-radius:16px;padding:16px}
-  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-  a{color:#93c5fd;text-decoration:none}
-  iframe{width:100%;border:0;min-height:1300px;border-radius:12px;background:#0b1220}
-  .hint{color:#94a3b8;font-size:14px;margin-top:8px}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join the MyWorkBridge Waitlist</title>
+  <meta name="description" content="Sign up to get launch updates from MyWorkBridge." />
+  <style>
+    :root{
+      --bg:#0b1220;--card:#0f172a;--text:#e2e8f0;
+      --brand:#22c55e;--muted:#94a3b8;--line:rgba(148,163,184,.22);
+      --ring:#22d3ee;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:radial-gradient(1200px 600px at 10% -10%, rgba(34,197,94,.12), transparent 60%),
+                 radial-gradient(1200px 600px at 110% 10%, rgba(34,197,94,.12), transparent 60%),
+                 var(--bg);
+      color:var(--text);display:flex;align-items:center;justify-content:center;padding:24px;
+    }
+    .wrap{max-width:980px;margin:0 auto;padding:20px}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+      border:1px solid var(--line);border-radius:16px;padding:16px;
+      box-shadow:0 20px 60px rgba(0,0,0,.45)
+    }
+    header{
+      display:flex;align-items:center;justify-content:space-between;margin-bottom:16px
+    }
+    a{color:#93c5fd;text-decoration:none}
+    .back{display:inline-flex;gap:8px;align-items:center;font-weight:600}
+    .back svg{opacity:.8}
+    h1{margin:0 0 4px}
+    p.lead{margin:6px 0 16px;color:var(--muted)}
+    .frame{
+      width:100%;min-height:1320px;border:0;border-radius:12px;
+      background:#0b1220
+    }
+    footer{margin-top:16px;color:var(--muted);font-size:14px}
+    .chip{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);
+          padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.02)}
+    .brand{color:#22c55e;font-weight:700}
+    /* focus ring */
+    a:focus-visible, .chip:focus-visible { outline:3px solid var(--ring); outline-offset:3px; border-radius:12px }
+  </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <a href="/" aria-label="Back to Home">← Back to Home</a>
-      <strong>MyWorkBridge – Waitlist</strong>
-    </header>
-
     <div class="card">
+      <header>
+        <a class="back" href="/"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M11 15l-5-5 5-5" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to Home</a>
+        <span class="chip"><span class="brand">MW</span> MyWorkBridge</span>
+      </header>
+
+      <h1>Join the Waitlist</h1>
+      <p class="lead">Sign up to be first in line for launch updates and early access.</p>
+
+      <!-- 👇 بدّلي src باللينك ديال Google Form بنسخة embed (embedded=true) -->
       <iframe
-        src="https:/
+        class="frame"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeDmw6cQwMQ8vEuFLCzIlUeSbTP59HV6ezhU71p_9DT8WIgbQ/viewform?embedded=true"
+        loading="lazy">Loading…</iframe>
+
+      <footer>© <span id="year"></span> MyWorkBridge. All rights reserved.</footer>
+    </div>
+  </div>
+
+  <script>
+    // year auto
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
